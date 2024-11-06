@@ -26,7 +26,7 @@ SECRET_KEY = "django-insecure-43ga+tlq(&=^^3j-47q@eze5p=s+r)(87=30n!5xf594&1*#&h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -126,6 +126,4 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 RAZORPAY_KEY_ID = os.environ.get("RAZORPAY_KEY_ID")
 RAZORPAY_KEY_SECRET = os.environ.get("RAZORPAY_KEY_SECRET")
 
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-]
+CORS_ORIGIN_ALLOW_ALL = True

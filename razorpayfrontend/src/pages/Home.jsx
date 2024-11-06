@@ -21,10 +21,10 @@ export const Home = ()=>{
             }
         })
         .then((response)=>{
-            console.log(response.data);
+            // console.log(response.data);
         })
         .catch((error)=>{
-            console.log(error.response.data);
+            // console.log(error.response.data);
         })
     }
 
@@ -46,12 +46,12 @@ export const Home = ()=>{
             // handle payment
             const options = {
                 key: process.env.REACT_APP_RAZORPAY_KEY_ID, // Enter the Key ID generated from the Dashboard
-                name: "Acme Corp",
+                name: "Security Troops",
                 description: "Test Transaction",
-                image: "https://example.com/your_logo",
+                image: "https://securitytroops.com/media/user/logo-st-128_QOOYYq3.png",
                 order_id: order_id, //This is a sample Order ID. Pass the `id` obtained in the response of createOrder().
                 handler: function (response) {
-
+                    console.log(response, "66666666666666666")
                     //complete order
                     complete_order(
                         response.razorpay_payment_id,
@@ -71,7 +71,7 @@ export const Home = ()=>{
                 color: "#3399cc",
                 },
             };
-
+            console.log(options, "options")
             const rzp1 = new Razorpay(options);
             rzp1.on("payment.failed", function (response) {
                 alert(response.error.code);
